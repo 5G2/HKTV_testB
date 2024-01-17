@@ -1,0 +1,5 @@
+SELECT user_code, COUNT(*) AS tote_count
+FROM order_tote_process_log
+WHERE action_code = 'PACKED'
+  AND process_date >= '2023-11-01 10:00:00' AND time <= '2023-11-01 10:59:59'
+GROUP BY user_code;
